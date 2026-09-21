@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "get_fundamental_history",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "IDX symbol confirmed through search_companies; never a URL or path."
+    },
+    "metric_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "timeframe": {
+      "type": "string",
+      "enum": [
+        "1y",
+        "3y",
+        "5y",
+        "10y"
+      ]
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    }
+  },
+  "required": [
+    "symbol",
+    "metric_id",
+    "timeframe",
+    "page"
+  ],
+  "additionalProperties": false
+}

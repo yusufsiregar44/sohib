@@ -1,0 +1,24 @@
+{
+  "name": "screen_equities",
+  "description": "Basic numeric rules over IHSG, executed unsaved. Sorted by the first rule metric (verified 2026-09-19).",
+  "status": "implemented_browser_mode",
+  "enabled": "browser mode only; fixture and disabled modes expose search_companies, get_key_statistics and list_metrics",
+  "read_only": true,
+  "endpoint_mapping": "POST /screener/templates (save=0, screenerid=0, type=TEMPLATE_TYPE_CUSTOM)",
+  "transport": "in-page fetch from the signed-in Stockbit tab (ADR 006); allowlisted in sohib/stockbit/api_routes.py",
+  "input_schema": "screen_equities.input.schema.json",
+  "output_schema": "output.schema.json",
+  "record_kind": "companies",
+  "live_verified": "2026-09-19",
+  "live_evidence": "../stockbit-evidence/fetch-transport-2026-09-19/README.md",
+  "authentication": "provider_managed_session; bearer read inside the page, never exported",
+  "normalization": "README.md",
+  "publication_time": "unknown unless explicitly provided",
+  "runtime_limits": {
+    "timeout_seconds": 40,
+    "max_attempts": 1,
+    "concurrency": 1
+  },
+  "page_size": 25,
+  "evidence_distribution": "Verification summary only; captured provider responses are not distributed."
+}

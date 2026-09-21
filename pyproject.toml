@@ -1,0 +1,75 @@
+[project]
+name = "sohib"
+version = "0.1.0"
+description = "Local MCP server that lets AI agents research Indonesian equities through your own signed-in Stockbit session"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+authors = [{ name = "Yusuf Siregar" }]
+keywords = ["mcp", "stockbit", "idx", "indonesia", "equities", "research", "ai-agents"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "anyio>=4.15,<5",
+    "jsonschema>=4.25,<5",
+    "mcp>=2.2,<3",
+    "playwright>=1.63,<2",
+]
+
+[project.urls]
+Homepage = "https://github.com/yusufsiregar44/sohib"
+Documentation = "https://github.com/yusufsiregar44/sohib/tree/main/docs"
+Issues = "https://github.com/yusufsiregar44/sohib/issues"
+Changelog = "https://github.com/yusufsiregar44/sohib/blob/main/CHANGELOG.md"
+
+[project.scripts]
+sohib = "sohib.onboarding:main"
+sohib-tools = "sohib.tools.__main__:main"
+sohib-mcp = "sohib.interfaces.mcp_server:main"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sohib*"]
+
+[tool.setuptools.package-data]
+"sohib.stockbit" = ["fixtures/*.json"]
+
+[dependency-groups]
+dev = ["ruff==0.12.12", "build>=1.2"]
+
+[tool.ruff]
+required-version = "==0.12.12"
+target-version = "py312"
+line-length = 100
+extend-exclude = ["integrations/openclaw/node_modules"]
+force-exclude = true
+unsafe-fixes = false
+
+[tool.ruff.lint]
+select = [
+    "E4", "E7", "E9", # Import/statement errors; formatting belongs to the formatter.
+    "F",              # Undefined names, unused imports and variables.
+    "I",              # Consistent import ordering.
+    "B",              # Common bugs, including mutable defaults and loop closures.
+    "UP",             # Python 3.12 idioms.
+    "C4",             # Unnecessary comprehensions.
+    "PIE",            # Redundant or misleading constructs.
+    "RUF100",         # Stale noqa suppressions.
+]
+
+[tool.ruff.format]
+quote-style = "single"

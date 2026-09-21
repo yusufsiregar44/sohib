@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "get_price_performance",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "IDX symbol confirmed through search_companies; never a URL or path."
+    }
+  },
+  "required": [
+    "symbol"
+  ],
+  "additionalProperties": false
+}

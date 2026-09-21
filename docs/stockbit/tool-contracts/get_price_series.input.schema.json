@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "get_price_series",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "IDX symbol confirmed through search_companies; never a URL or path."
+    },
+    "timeframe": {
+      "type": "string",
+      "enum": [
+        "today",
+        "1d",
+        "1w",
+        "1m",
+        "3m",
+        "6m",
+        "ytd",
+        "1y",
+        "3y",
+        "5y"
+      ]
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    }
+  },
+  "required": [
+    "symbol",
+    "timeframe",
+    "page"
+  ],
+  "additionalProperties": false
+}

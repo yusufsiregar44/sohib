@@ -1,0 +1,45 @@
+{
+  "fixture_kind": "synthetic",
+  "data": {
+    "closure_fin_items_results": [
+      {
+        "keystats_name": "Synthetic valuation",
+        "fin_name_results": [
+          {
+            "fitem": {
+              "id": "2891",
+              "name": "Current PE Ratio (TTM)",
+              "value": "12.50"
+            }
+          },
+          {
+            "fitem": {
+              "id": "90001",
+              "name": "Synthetic missing metric",
+              "value": "-"
+            }
+          }
+        ]
+      },
+      {
+        "keystats_name": "Synthetic profitability",
+        "fin_name_results": [
+          {
+            "fitem": {
+              "id": "90002",
+              "name": "Return on Equity (TTM)",
+              "value": "15.00%"
+            }
+          },
+          {
+            "fitem": {
+              "id": "90003",
+              "name": "Synthetic negative amount",
+              "value": "(2 B)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

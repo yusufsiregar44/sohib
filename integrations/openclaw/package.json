@@ -1,0 +1,7 @@
+{
+  "name": "sohib-openclaw-access",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SohiB-owned mcporter client; no OpenClaw modifications",
+  "dependencies": { "mcporter": "0.13.13" }
+}

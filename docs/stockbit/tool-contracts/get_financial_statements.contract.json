@@ -1,0 +1,24 @@
+{
+  "name": "get_financial_statements",
+  "description": "Statement account x period cells parsed from the provider HTML report; balance_sheet + ttm rejected.",
+  "status": "implemented_browser_mode",
+  "enabled": "browser mode only; fixture and disabled modes expose search_companies, get_key_statistics and list_metrics",
+  "read_only": true,
+  "endpoint_mapping": "/findata-view/company/financial?symbol={symbol}&data_type=1&report_type={report_type}&statement_type={statement_type}",
+  "transport": "in-page fetch from the signed-in Stockbit tab (ADR 006); allowlisted in sohib/stockbit/api_routes.py",
+  "input_schema": "get_financial_statements.input.schema.json",
+  "output_schema": "output.schema.json",
+  "record_kind": "financial_cells",
+  "live_verified": "2026-09-19",
+  "live_evidence": "../stockbit-evidence/fetch-transport-2026-09-19/README.md",
+  "authentication": "provider_managed_session; bearer read inside the page, never exported",
+  "normalization": "README.md",
+  "publication_time": "unknown unless explicitly provided",
+  "runtime_limits": {
+    "timeout_seconds": 40,
+    "max_attempts": 1,
+    "concurrency": 1
+  },
+  "page_size": 20,
+  "evidence_distribution": "Verification summary only; captured provider responses are not distributed."
+}

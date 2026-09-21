@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+secrets/
+node_modules/
+.DS_Store
+# Captured Stockbit responses used by tests/test_stockbit_research.py stay local.
+tests/evidence/*
+!tests/evidence/README.md

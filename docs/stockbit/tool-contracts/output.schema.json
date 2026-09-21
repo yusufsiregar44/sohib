@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "partial",
+        "error"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          },
+          "display_value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "currency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "period": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "timestamp": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "missing_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "attributes": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "namespace",
+          "value",
+          "unit",
+          "currency",
+          "period",
+          "missing_reason",
+          "attributes"
+        ]
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "const": "stockbit"
+        },
+        "fetched_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "data_as_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "endpoint_template": {
+          "type": "string"
+        },
+        "fixture_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "adjustment": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "unadjusted",
+            "adjusted"
+          ]
+        }
+      },
+      "required": [
+        "provider",
+        "fetched_at",
+        "data_as_of",
+        "published_at",
+        "endpoint_template",
+        "fixture_ref",
+        "adjustment"
+      ]
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "total": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "next_page": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "complete": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "complete"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "error": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "AUTH_REQUIRED",
+            "AUTH_EXPIRED",
+            "AUTH_CHALLENGE",
+            "FORBIDDEN",
+            "RATE_LIMITED",
+            "UNSUPPORTED_INPUT",
+            "NO_DATA",
+            "SCHEMA_CHANGED",
+            "UPSTREAM_ERROR"
+          ]
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "retryable",
+        "message"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "records",
+    "provenance",
+    "pagination",
+    "warnings",
+    "error"
+  ]
+}

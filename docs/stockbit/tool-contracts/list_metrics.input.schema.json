@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "list_metrics",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Stock symbol; null for screener taxonomy. Fixture coverage varies."
+    },
+    "query": {
+      "type": "string",
+      "description": "Case-insensitive label/ID filter; empty for all."
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "namespace": {
+      "type": "string",
+      "enum": [
+        "screener",
+        "keystats",
+        "financials",
+        "fundachart",
+        "comparison"
+      ]
+    }
+  },
+  "required": [
+    "symbol",
+    "query",
+    "page",
+    "namespace"
+  ],
+  "additionalProperties": false
+}

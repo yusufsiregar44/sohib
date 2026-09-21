@@ -1,0 +1,24 @@
+{
+  "name": "get_price_series",
+  "description": "Verified price LINE data only, newest first with a period summary. OHLCV unavailable.",
+  "status": "implemented_browser_mode",
+  "enabled": "browser mode only; fixture and disabled modes expose search_companies, get_key_statistics and list_metrics",
+  "read_only": true,
+  "endpoint_mapping": "/charts/{symbol}/daily?timeframe={timeframe}",
+  "transport": "in-page fetch from the signed-in Stockbit tab (ADR 006); allowlisted in sohib/stockbit/api_routes.py",
+  "input_schema": "get_price_series.input.schema.json",
+  "output_schema": "output.schema.json",
+  "record_kind": "series",
+  "live_verified": "2026-09-19",
+  "live_evidence": "../stockbit-evidence/fetch-transport-2026-09-19/README.md",
+  "authentication": "provider_managed_session; bearer read inside the page, never exported",
+  "normalization": "README.md",
+  "publication_time": "unknown unless explicitly provided",
+  "runtime_limits": {
+    "timeout_seconds": 40,
+    "max_attempts": 1,
+    "concurrency": 1
+  },
+  "page_size": 40,
+  "evidence_distribution": "Verification summary only; captured provider responses are not distributed."
+}

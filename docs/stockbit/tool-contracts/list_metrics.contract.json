@@ -1,0 +1,24 @@
+{
+  "name": "list_metrics",
+  "description": "Metric discovery per namespace: keystats and financials need a symbol; screener, fundachart and comparison are market-wide.",
+  "status": "implemented_browser_mode",
+  "enabled": "browser mode only; fixture and disabled modes expose search_companies, get_key_statistics and list_metrics",
+  "read_only": true,
+  "endpoint_mapping": "/screener/metric; /fundachart/metrics?metric_name=fundachart; /comparison/metrics; /keystats/ratio/v1/{symbol}?year_limit=10; /findata-view/company/financial?symbol={symbol}&data_type=1&report_type={report_type}&statement_type={statement_type} (report_type 1,2,3; statement_type 1)",
+  "transport": "in-page fetch from the signed-in Stockbit tab (ADR 006); allowlisted in sohib/stockbit/api_routes.py",
+  "input_schema": "list_metrics.input.schema.json",
+  "output_schema": "output.schema.json",
+  "record_kind": "metrics",
+  "live_verified": "2026-09-19",
+  "live_evidence": "../stockbit-evidence/fetch-transport-2026-09-19/README.md",
+  "authentication": "provider_managed_session; bearer read inside the page, never exported",
+  "normalization": "README.md",
+  "publication_time": "unknown unless explicitly provided",
+  "runtime_limits": {
+    "timeout_seconds": 40,
+    "max_attempts": 1,
+    "concurrency": 1
+  },
+  "page_size": 20,
+  "evidence_distribution": "Verification summary only; captured provider responses are not distributed."
+}

@@ -1,0 +1,37 @@
+{
+  "name": "search_companies",
+  "description": "Find equity company candidates by symbol or company name. Does not select a company automatically.",
+  "status": "implemented_browser_mode",
+  "enabled": "browser mode only; fixture and disabled modes expose search_companies, get_key_statistics and list_metrics",
+  "read_only": true,
+  "endpoint_mapping": "/search",
+  "transport": "in-page fetch from the signed-in Stockbit tab (ADR 006); allowlisted in sohib/stockbit/api_routes.py",
+  "input_schema": "search_companies.input.schema.json",
+  "output_schema": "output.schema.json",
+  "record_kind": "company_candidates",
+  "live_verified": "2026-09-19",
+  "live_evidence": "../stockbit-evidence/fetch-transport-2026-09-19/README.md",
+  "authentication": "provider_managed_session; bearer read inside the page, never exported",
+  "normalization": "../company-search.md",
+  "publication_time": "unknown unless explicitly provided",
+  "runtime_limits": {
+    "timeout_seconds": 40,
+    "max_attempts": 1,
+    "concurrency": 1
+  },
+  "page_size": 20,
+  "fixed_query": {
+    "page": 0,
+    "type": "all",
+    "catalog_types": [
+      "CATALOG_TYPE_SECTOR",
+      "CATALOG_TYPE_INDUSTRY"
+    ]
+  },
+  "argument_mapping": {
+    "query": "keyword"
+  },
+  "query_encoding": "URL-encode keyword; repeat catalog_types query key for each value.",
+  "fixture": "../../../sohib/stockbit/fixtures/company-search.json",
+  "evidence_distribution": "Verification summary only; captured provider responses are not distributed."
+}

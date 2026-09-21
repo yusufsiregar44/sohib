@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "get_financial_statements",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "IDX symbol confirmed through search_companies; never a URL or path."
+    },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "income_statement",
+        "balance_sheet",
+        "cash_flow"
+      ]
+    },
+    "period_mode": {
+      "type": "string",
+      "enum": [
+        "quarterly",
+        "annual",
+        "ttm"
+      ]
+    },
+    "periods": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "query": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Case-insensitive label/ID filter; empty for all."
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    }
+  },
+  "required": [
+    "symbol",
+    "report_type",
+    "period_mode",
+    "periods",
+    "query",
+    "page"
+  ],
+  "additionalProperties": false
+}

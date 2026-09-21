@@ -1,0 +1,147 @@
+{
+  "fixture_kind": "synthetic",
+  "data": [
+    {
+      "fitem_id": 1,
+      "fitem_name": "Synthetic category",
+      "child": [
+        {
+          "fitem_id": 2891,
+          "fitem_name": "Current PE Ratio (TTM)",
+          "child": []
+        },
+        {
+          "fitem_id": 12464,
+          "fitem_name": "Volume MA 20",
+          "child": []
+        },
+        {
+          "fitem_id": 90000,
+          "fitem_name": "Synthetic metric 0",
+          "child": []
+        },
+        {
+          "fitem_id": 90001,
+          "fitem_name": "Synthetic metric 1",
+          "child": []
+        },
+        {
+          "fitem_id": 90002,
+          "fitem_name": "Synthetic metric 2",
+          "child": []
+        },
+        {
+          "fitem_id": 90003,
+          "fitem_name": "Synthetic metric 3",
+          "child": []
+        },
+        {
+          "fitem_id": 90004,
+          "fitem_name": "Synthetic metric 4",
+          "child": []
+        },
+        {
+          "fitem_id": 90005,
+          "fitem_name": "Synthetic metric 5",
+          "child": []
+        },
+        {
+          "fitem_id": 90006,
+          "fitem_name": "Synthetic metric 6",
+          "child": []
+        },
+        {
+          "fitem_id": 90007,
+          "fitem_name": "Synthetic metric 7",
+          "child": []
+        },
+        {
+          "fitem_id": 90008,
+          "fitem_name": "Synthetic metric 8",
+          "child": []
+        },
+        {
+          "fitem_id": 90009,
+          "fitem_name": "Synthetic metric 9",
+          "child": []
+        },
+        {
+          "fitem_id": 90010,
+          "fitem_name": "Synthetic metric 10",
+          "child": []
+        },
+        {
+          "fitem_id": 90011,
+          "fitem_name": "Synthetic metric 11",
+          "child": []
+        },
+        {
+          "fitem_id": 90012,
+          "fitem_name": "Synthetic metric 12",
+          "child": []
+        },
+        {
+          "fitem_id": 90013,
+          "fitem_name": "Synthetic metric 13",
+          "child": []
+        },
+        {
+          "fitem_id": 90014,
+          "fitem_name": "Synthetic metric 14",
+          "child": []
+        },
+        {
+          "fitem_id": 90015,
+          "fitem_name": "Synthetic metric 15",
+          "child": []
+        },
+        {
+          "fitem_id": 90016,
+          "fitem_name": "Synthetic metric 16",
+          "child": []
+        },
+        {
+          "fitem_id": 90017,
+          "fitem_name": "Synthetic metric 17",
+          "child": []
+        },
+        {
+          "fitem_id": 90018,
+          "fitem_name": "Synthetic metric 18",
+          "child": []
+        },
+        {
+          "fitem_id": 90019,
+          "fitem_name": "Synthetic metric 19",
+          "child": []
+        },
+        {
+          "fitem_id": 90020,
+          "fitem_name": "Synthetic metric 20",
+          "child": []
+        },
+        {
+          "fitem_id": 90021,
+          "fitem_name": "Synthetic metric 21",
+          "child": []
+        },
+        {
+          "fitem_id": 90022,
+          "fitem_name": "Synthetic metric 22",
+          "child": []
+        }
+      ]
+    },
+    {
+      "fitem_id": 2,
+      "fitem_name": "Synthetic duplicate category",
+      "child": [
+        {
+          "fitem_id": 2891,
+          "fitem_name": "Current PE Ratio (TTM)",
+          "child": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "screen_equities",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "operator": {
+            "type": "string",
+            "enum": [
+              ">",
+              "<",
+              "<=",
+              "=",
+              ">="
+            ]
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "metric_id",
+          "operator",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "sort_direction": {
+      "type": "string",
+      "enum": [
+        "ascending",
+        "descending"
+      ]
+    }
+  },
+  "required": [
+    "rules",
+    "page",
+    "sort_direction"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,75 @@
+{
+  "fixture_kind": "synthetic",
+  "examples": [
+    {
+      "query": "AKRA",
+      "response": {
+        "data": {
+          "company": [
+            {
+              "id": "1",
+              "name": "AKRA",
+              "desc": "Synthetic AKRA Example",
+              "country": "ID",
+              "exchange": "IDX",
+              "other": "saham",
+              "type": "Saham",
+              "is_tradeable": true,
+              "symbol_2": "AKRA",
+              "symbol_3": "AKRA",
+              "url": "symbol/AKRA"
+            },
+            {
+              "id": "2",
+              "name": "AKRA-W",
+              "desc": "Synthetic AKRA-W Example",
+              "country": "ID",
+              "exchange": "IDX",
+              "other": "waran",
+              "type": "Waran",
+              "is_tradeable": true,
+              "symbol_2": "AKRA-W",
+              "symbol_3": "AKRA-W",
+              "url": "symbol/AKRA-W"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "query": "Mitra Adiperkasa",
+      "response": {
+        "data": {
+          "company": [
+            {
+              "id": "3",
+              "name": "MAPI",
+              "desc": "Synthetic MAPI Example",
+              "country": "ID",
+              "exchange": "IDX",
+              "other": "saham",
+              "type": "Saham",
+              "is_tradeable": true,
+              "symbol_2": "MAPI",
+              "symbol_3": "MAPI",
+              "url": "symbol/MAPI"
+            },
+            {
+              "id": "4",
+              "name": "DEMO",
+              "desc": "Synthetic DEMO Example",
+              "country": "ID",
+              "exchange": "IDX",
+              "other": "saham",
+              "type": "Saham",
+              "is_tradeable": false,
+              "symbol_2": "DEMO",
+              "symbol_3": "DEMO",
+              "url": "symbol/DEMO"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
